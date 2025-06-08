@@ -29,7 +29,8 @@ const OrderInfo: FC<{order: Order}> = ({order}) => {
                         <span>{index + 1}.</span>
                         <span>{item.name}</span>
                         <span>{item.size}</span>
-                        <span>{getPrice(item.price)}</span>
+                        <span>{item.count}</span>
+                        <span>{getPrice(item.price * item.count)}</span>
                     </div>
                 )}
             </div>

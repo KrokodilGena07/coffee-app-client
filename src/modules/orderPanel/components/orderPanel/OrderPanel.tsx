@@ -35,6 +35,7 @@ export const OrderPanel: FC = () => {
         });
         setModalFlag(false);
         setOrder([]);
+        setPaymentMethod(null);
         localStorage.removeItem('CURRENT_ORDER');
     };
 
