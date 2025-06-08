@@ -1,0 +1,195 @@
+.Header {
+    position: fixed;
+    z-index: 1;
+
+    padding: 10px;
+    width: 100%;
+    height: 60px;
+    border-bottom: 2px solid #9ba8ab;
+    background-color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: "Montserrat", sans-serif;
+}
+
+.OrderPanel {
+    position: relative;
+    top: 60px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.Sidebar {
+    width: 400px;
+    position: fixed;
+    height: calc(100vh - 60px);
+    border-right: 2px solid #9ba8ab;
+}
+
+.SidebarItems {
+    overflow-y: scroll;
+    height: calc(100vh - 60px - 100px);
+}
+
+.SidebarItem {
+    border-bottom: 2px solid #9ba8ab;
+    padding: 10px;
+
+    display: grid;
+    grid-template-columns: 40% 20% 20% 20%;
+}
+
+.SidebarPanel {
+    position: fixed;
+    width: 398px;
+    height: 100px;
+    bottom: 0;
+    background-color: #ffffff;
+    padding: 10px;
+    border-top: 2px solid #9ba8ab;
+}
+
+.SidebarTitle {
+    color: royalblue;
+    font-weight: 600;
+}
+
+.SidebarText {
+    font-size: x-large;
+}
+
+.PrimaryButton {
+    background-color: royalblue;
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 10px;
+    border: none;
+    font-size: large;
+    margin-top: 6px;
+    font-family: Montserrat, sans-serif;
+}
+
+.PrimaryButton:hover {
+    background-color: #4776ff;
+    cursor: pointer;
+}
+
+.PrimaryButton:disabled {
+    cursor: default;
+    background-color: #e7e7e7;
+}
+
+.Method {
+    cursor: pointer;
+    color: #7d9cfd;
+}
+
+.SelectedMethod {
+    color: royalblue;
+}
+
+.Panel {
+    position: relative;
+    left: 400px;
+    width: calc(100% - 400px);
+    padding: 20px;
+}
+
+.PanelItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.Link {
+    color: #9ba8ab;
+    margin-left: 20px;
+    text-decoration: none;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+}
+
+.Link:hover {
+    color: #8d8d8d;
+}
+
+.Item {
+    text-align: center;
+    background-color: #e3e3e3;
+    border-radius: 16px;
+    padding-bottom: 10px;
+}
+
+.Item:hover {
+    background-color: #ececec;
+    cursor: pointer;
+}
+
+.ItemTitle {
+    margin-top: 35px;
+}
+
+.ItemText {
+    margin-top: 20px;
+}
+
+.ItemImage {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    width: 250px;
+}
+
+.Points {
+    margin-bottom: 20px;
+    text-decoration: underline;
+    font-weight: 600;
+    color: royalblue;
+    font-size: large;
+}
+
+.BasePoint:hover {
+    cursor: pointer;
+    color: #5f87ff;
+}
+
+.Point:hover {
+    color: #8ca7ff;
+}
+
+.Modal {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ModalChildren {
+    background-color: #ffffff;
+    border-radius: 16px;
+    width: 70%;
+    height: 80vh;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    font-family: Montserrat, sans-serif;
+}
+
+.Freeze {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.Methods {
+    display: flex;
+    gap: 20px;
+}
