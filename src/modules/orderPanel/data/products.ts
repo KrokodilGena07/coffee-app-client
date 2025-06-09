@@ -584,7 +584,7 @@ export const products = [
                 image: coffee,
                 name: 'Радужный единорог',
                 size: 0.3,
-                price: 199
+                price: 190
             },
             {
                 id: 69,
@@ -598,7 +598,7 @@ export const products = [
                 image: coffee,
                 name: 'Сникерс',
                 size: 0.3,
-                price: 199
+                price: 190
             },
             {
                 id: 611,
@@ -612,7 +612,7 @@ export const products = [
                 image: coffee,
                 name: 'Ежевичный',
                 size: 0.3,
-                price: 199
+                price: 190
             },
             {
                 id: 613,
@@ -773,7 +773,7 @@ export const products = [
                 id: 190,
                 name: 'Раф банан-карамель',
                 image: panini,
-                price: 170,
+                price: 190,
                 size: 0.3
             },
             {
@@ -908,6 +908,55 @@ export const products = [
                 image: panini,
                 price: 239,
                 size: 0.4
+            }
+        ]
+    },
+    {
+        id: 12,
+        image: sandwiches,
+        name: 'Добавки',
+        items: [
+            {
+                id: 121,
+                name: 'Взбитые сливки',
+                image: milkshake,
+                price: 55,
+            },
+            {
+                id: 122,
+                name: 'Сироп',
+                image: milkshake,
+                price: 25,
+            },
+            {
+                id: 123,
+                name: 'Шот эспрессо',
+                image: milkshake,
+                price: 65,
+            },
+            {
+                id: 124,
+                name: 'Растительное молоко',
+                image: milkshake,
+                price: 65,
+            },
+            {
+                id: 125,
+                name: 'Молоко',
+                image: milkshake,
+                price: 25,
+            },
+            {
+                id: 126,
+                name: 'Сливки',
+                image: milkshake,
+                price: 25,
+            },
+            {
+                id: 127,
+                name: 'Маршеллоу',
+                image: milkshake,
+                price: 35,
             }
         ]
     }
