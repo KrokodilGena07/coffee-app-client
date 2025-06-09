@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useEffect, useMemo, useState} from 'react';
 import styles from './OrderList.module.css';
 import {useOrders} from '@/store/useOrders';
 import {Order} from '@/models/Order';
@@ -43,18 +43,16 @@ export const OrderList: FC = () => {
 
     const [order, setOrder] = useState<Order>(null);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
-    const [orderList, setOrderList] = useState<Order[]>(null);
     const [modalFlag, setModalFlag] = useState(false);
+
+    const orderList = useMemo(() => {
+        return orders.reverse();
+    }, [orders]);
 
     const openModal = (order: Order) => {
         setOrder(order);
         setModalFlag(true);
     };
-
-    useEffect(() => {
-        setOrderList(orders.reverse());
-        return () => {};
-    }, []);
 
     useEffect(() => {
         window.addEventListener('resize', () => {
@@ -112,7 +110,7 @@ export const OrderList: FC = () => {
                     </aside>
                 }
                 <main className={styles.OrderList}>
-                    {orderList?.map(order =>
+                    {orderList?.reverse().map(order =>
                         <div
                             key={order.id}
                             className={styles.Order}

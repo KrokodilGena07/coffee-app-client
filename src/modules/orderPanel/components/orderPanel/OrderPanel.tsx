@@ -9,6 +9,7 @@ import {getPrice} from '@/utils/getPrice';
 import {OrderProduct} from '@/modules/orderPanel/models/OrderProduct';
 import {PaymentMethod} from '@/models/PaymentMethod';
 import {useOrders} from '@/store/useOrders';
+import DeleteIcon from '../../assets/svg/delete.svg';
 
 export const OrderPanel: FC = () => {
     const [items, setItems] = useState<ProductParent[] | ProductChildren[]>(products);
@@ -64,6 +65,42 @@ export const OrderPanel: FC = () => {
             return newState;
         });
     };
+
+    const decrementItemCount = (item: OrderProduct) => {
+        setOrder(prev => {
+            const index = order.findIndex(i => i.id === item.id);
+
+            if (item.count === 1) {
+                return [
+                    ...order.slice(0, index),
+                    ...order.slice(index + 1)
+                ];
+            }
+
+            return [
+                ...order.slice(0, index),
+                {...order[index], count: order[index].count - 1},
+                ...order.slice(index + 1)
+            ];
+        })
+    };
+
+    const incrementItemCount = (item: OrderProduct) => {
+        setOrder(prev => {
+            const index = order.findIndex(i => i.id === item.id);
+
+            return [
+                ...order.slice(0, index),
+                {...order[index], count: order[index].count + 1},
+                ...order.slice(index + 1)
+            ];
+        })
+    };
+
+    const resetOrder = () => {
+        setOrder([]);
+        localStorage.removeItem('CURRENT_ORDER');
+    }
 
     const resultPrice = useMemo(() => {
         let price = 0;
@@ -145,6 +182,15 @@ export const OrderPanel: FC = () => {
             </header>
             <div className={styles.OrderPanel}>
                 <aside className={styles.Sidebar}>
+                    <div className={styles.SidebarClean}>
+                        <p>Заказ № {orders.length + 1}</p>
+                        <button
+                            className={styles.DeleteButton}
+                            onClick={resetOrder}
+                        >
+                            <DeleteIcon width={30} height={30}/>
+                        </button>
+                    </div>
                     <div className={styles.SidebarItems}>
                         {order.map(item =>
                             <div
@@ -153,7 +199,21 @@ export const OrderPanel: FC = () => {
                             >
                                 <p>{item.name}</p>
                                 <p>{item.size}</p>
-                                <p>{item.count}</p>
+                                <div className={styles.SidebarItemCount}>
+                                    <button
+                                        className={styles.CountItem}
+                                        onClick={() => decrementItemCount(item)}
+                                    >
+                                        -
+                                    </button>
+                                    <p>{item.count}</p>
+                                    <button
+                                        className={styles.CountItem}
+                                        onClick={() => incrementItemCount(item)}
+                                    >
+                                        +
+                                    </button>
+                                </div>
                                 <p>{getPrice(item.price)}</p>
                             </div>
                         )}

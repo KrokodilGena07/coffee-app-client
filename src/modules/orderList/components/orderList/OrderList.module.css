@@ -57,10 +57,9 @@
     font-size: large;
 
     display: grid;
-    grid-template-columns: 10% 40% 10% 10% 20%;
+    grid-template-columns: 10% 45% 15% 10% 15%;
     align-items: center;
     margin-top: 20px;
-    gap: 10px;
 }
 
 .Modal {

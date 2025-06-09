@@ -30,7 +30,7 @@
 
 .SidebarItems {
     overflow-y: scroll;
-    height: calc(100vh - 60px - 100px);
+    height: calc(100vh - 60px - 100px - 55.6px);
 }
 
 .SidebarItem {
@@ -38,7 +38,54 @@
     padding: 10px;
 
     display: grid;
-    grid-template-columns: 40% 20% 20% 20%;
+    align-items: center;
+    grid-template-columns: 40% 15% 25% 20%;
+}
+
+.SidebarItemCount {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.CountItem {
+    background-color: royalblue;
+    border-radius: 50%;
+    color: #ffffff;
+    width: 18px;
+    height: 18px;
+    border: none;
+    font-family: Montserrat, sans-serif;
+    line-height: 18px;
+    font-size: large;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.DeleteButton {
+    background-color: #ffffff;
+    border: none;
+}
+
+.DeleteButton:hover {
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.CountItem:hover {
+    background-color: #7d9cfd;
+    cursor: pointer;
+}
+
+.SidebarClean {
+    border-bottom: 2px solid #9ba8ab;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .SidebarPanel {
